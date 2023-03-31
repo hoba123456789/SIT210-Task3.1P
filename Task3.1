@@ -1,0 +1,21 @@
+
+#include <Grove_Temperature_And_Humidity_Sensor.h>
+
+DHT dht(D7);
+
+void setup()
+{
+Serial.begin(9600);
+dht.begin();
+}
+
+void loop()
+{
+float temp = dht.getTempFarenheit();
+float humidity = dht.getHumidity();
+
+Serial.printlnf("Temperature: ", temp);
+Serial.printlnf("Humidity: ", humidity);
+
+delay(12000);
+}
